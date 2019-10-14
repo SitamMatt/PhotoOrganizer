@@ -1,7 +1,11 @@
-﻿using System;
+﻿using MDO.Operations;
+using MDO.Operations.Windows.DateTaken;
+using System;
+using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 
-namespace DateSetter
+namespace MDO.CLI
 {
     class Program
     {
@@ -12,8 +16,8 @@ namespace DateSetter
             bool recursive = false;
             string output = "";
             DateTime date;
-            //bool fromFileName = false;
-            AbstarctDirectoryOperation operation = new Iterator();
+            string exclude = "";
+            AbstarctDirectoryOperation operation = new Indentity();
             for (int i = 0; i < args.Length; i++)
             {
                 switch (args[i])
@@ -32,16 +36,26 @@ namespace DateSetter
                         output = args[i + 1];
                         i++;
                         break;
-                    case "-d" when DateTime.TryParse(args[i + 1], out date): //format: YYYY-MM-DD HH:mm:ss
+                    case "-e" when !args[i + 1].StartsWith("-"):
+                        exclude = args[i + 1];
                         i++;
                         break;
+                    case "--exact-date" when DateTime.TryParseExact(args[i + 1], "yyyy-MM-dd-HH-mm-ss", null, DateTimeStyles.None, out date): //format: yyyy-MM-dd-HH-mm-ss
+                        operation = new ExactDateSetter(args[i + 1]);
+                        i++;
+                        break;
+                    case "--last-modified":
+                        operation = new FileLastModified(); 
+                        break;
                     case "--from-filename" when !args[i + 1].StartsWith("-"):
-                        //fromFileName = true;
-                        operation = new FileNameExtractor(args[i+1]);
+                        operation = new FileNameExtractor(args[i + 1]);
                         i++;
                         break;
                     case "--iterator":
                         operation = new Iterator();
+                        break;
+                    case "--debug":
+                        Debugger.Launch();
                         break;
                     default:
                         throw new Exception("Invalid argument");
@@ -53,11 +67,11 @@ namespace DateSetter
             }
             if (recursive)
             {
-                operation.PerfromRecursively(dirName, match, output);
+                operation.PerfromRecursively(dirName, match, exclude, output);
             }
             else
             {
-                operation.Perform(dirName, match, output);
+                operation.Perform(dirName, match, exclude, output);
             }
         }
     }

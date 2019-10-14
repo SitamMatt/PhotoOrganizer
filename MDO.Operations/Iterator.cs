@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.IO;
 
-namespace DateSetter
+namespace MDO.Operations
 {
-    class Iterator : AbstarctDirectoryOperation
+    public class Iterator : AbstarctDirectoryOperation
     {
         private int iterator = 0;
         protected override void Operation(string path, string output = "")

@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoOrganizer", "PhotoOrganizer\PhotoOrganizer.csproj", "{CD7F90EB-3BF7-4F33-8AA1-AE52575ADE46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Formats.Png", "Formats.Png\Formats.Png.csproj", "{D2E9A2F0-2641-4263-B72D-4586A7C18310}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DateSetter", "DateSetter\DateSetter.csproj", "{654D5A58-9590-4EE3-8AFA-081AC03C0921}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDO.CLI", "MDO.CLI\MDO.CLI.csproj", "{3F1EA2F4-FA3D-49EE-88FF-E0A03771B477}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formats.Png", "Formats.Png\Formats.Png.csproj", "{D2E9A2F0-2641-4263-B72D-4586A7C18310}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDO.Operations", "MDO.Operations\MDO.Operations.csproj", "{2EA9833E-C9D3-4EAA-A517-343BB001ADED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E4EE85DE-CBA9-49F9-9584-4A3B3925F0DB}"
+	ProjectSection(SolutionItems) = preProject
+		integrate.ps1 = integrate.ps1
+		integration.ps1 = integration.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +21,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CD7F90EB-3BF7-4F33-8AA1-AE52575ADE46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD7F90EB-3BF7-4F33-8AA1-AE52575ADE46}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD7F90EB-3BF7-4F33-8AA1-AE52575ADE46}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD7F90EB-3BF7-4F33-8AA1-AE52575ADE46}.Release|Any CPU.Build.0 = Release|Any CPU
-		{654D5A58-9590-4EE3-8AFA-081AC03C0921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{654D5A58-9590-4EE3-8AFA-081AC03C0921}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{654D5A58-9590-4EE3-8AFA-081AC03C0921}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{654D5A58-9590-4EE3-8AFA-081AC03C0921}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D2E9A2F0-2641-4263-B72D-4586A7C18310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D2E9A2F0-2641-4263-B72D-4586A7C18310}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2E9A2F0-2641-4263-B72D-4586A7C18310}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2E9A2F0-2641-4263-B72D-4586A7C18310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F1EA2F4-FA3D-49EE-88FF-E0A03771B477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F1EA2F4-FA3D-49EE-88FF-E0A03771B477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F1EA2F4-FA3D-49EE-88FF-E0A03771B477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F1EA2F4-FA3D-49EE-88FF-E0A03771B477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EA9833E-C9D3-4EAA-A517-343BB001ADED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA9833E-C9D3-4EAA-A517-343BB001ADED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA9833E-C9D3-4EAA-A517-343BB001ADED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA9833E-C9D3-4EAA-A517-343BB001ADED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
